@@ -1,0 +1,75 @@
+* {
+    position: relative;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    font-size: 16px;
+}
+
+/* @media screen and (max-width: 900px) {
+
+    html,
+    body {
+        font-size: 14px;
+    }
+} */
+
+html {
+    --black: #2A2828;
+    --grey: #615656;
+    --accent: #FC9D9D;
+    --green: rgb(120, 169, 96);
+    --red: rgb(243, 92, 92);
+    --column: 80rem;
+    --side: 1rem;
+    --spacing: 0.3em;
+    background: radial-gradient(circle, hsla(0, 0%, 100%, 1) 0%, hsla(0, 100%, 100%, 1) 65%, hsla(0, 100%, 97%, 1) 100%);
+    font-family: "Courier New", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: var(--black)
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+}
+
+.column {
+    width: 100%;
+    max-width: var(--column);
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 var(--side)
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: var(--accent);
+}
+
+.title {
+    color: var(--accent);
+    margin-bottom: .25em;
+}
+
+.red {
+    color: var(--red)
+}
+
+.green {
+    color: var(--green)
+}
