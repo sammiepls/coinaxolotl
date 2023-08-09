@@ -1,6 +1,9 @@
 <script lang="ts">
   import { USD, colorize, formatPercentage } from "$lib/utils.js";
   export let data;
+  import Chart from "./Chart.svelte";
+
+  console.log(data);
 </script>
 
 <div class="columns">
@@ -43,6 +46,34 @@
       {USD.format(data.coin.market_data.total_volume.usd)}
     </dd>
   </dl>
+</div>
+
+<div class="market-row">
+  <div class="chart-container">
+    <Chart />
+  </div>
+
+  <div class="price-stats">
+    <h2>Price Statistics</h2>
+    <dl>
+      <dt>24h Low / 24h High</dt>
+      <dd>
+        {USD.format(data.coin.market_data.high_24h.usd)} / {USD.format(
+          data.coin.market_data.low_24h.usd
+        )}
+      </dd>
+
+      <dt>All-Time High</dt>
+      <dd>
+        {USD.format(data.coin.market_data.ath.usd)}
+        <span
+          >{formatPercentage(
+            data.coin.market_data.ath_change_percentage.usd
+          )}</span
+        >
+      </dd>
+    </dl>
+  </div>
 </div>
 
 <style>
@@ -105,5 +136,17 @@
     margin: 0;
     font-weight: bold;
     font-size: 1.2em;
+  }
+
+  .market-row {
+    display: flex;
+  }
+
+  .chart-container {
+    flex: 2;
+  }
+
+  .price-stats {
+    flex: 1;
   }
 </style>

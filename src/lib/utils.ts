@@ -9,9 +9,9 @@ export function formatPercentage(percentage: number) {
     if (isInvalidPercentage) throw Error("Not a number");
 
     const formatted = isNaN(percentage) ? "-" : percentage.toPrecision(3);
-    const symbol = percentage > 0 ? "⬆" : "⬇";
+    const symbol = percentage > 0 ? "⤴" : "⤵";
 
-    return `${formatted} ${symbol}`;
+    return `${formatted}%${symbol}`;
   } catch (e) {
     return "-";
   }
